@@ -1,0 +1,99 @@
+doctype transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    title Resume
+    style
+      include css/blue.css
+  body
+    // Begin Wrapper
+    #wrapper
+      .wrapper-top
+      .wrapper-mid
+        // Begin Paper
+        #paper
+          .paper-top
+          #paper-mid
+            .entry
+              // Begin Image
+              img.portrait(src='http://127.0.0.1:3000/images/image.jpg')
+              // End Image
+              // Begin Personal Information
+              .self
+                h1.name
+                  | !{name} !{surname} 
+                  br
+                  span !{position}
+                ul
+                  li.ad !{city}
+                  li.mail !{email}
+                  li.tel !{phone}
+                  li.web www.businessweb.com
+              // End Personal Information
+            // Begin 1st Row
+            .entry
+              h2 OBJECTIVE
+              p
+                | !{aboutme}
+            // End 1st Row
+            // Begin 2nd Row
+            .entry
+              h2 EDUCATION
+              each ed in education
+                .content
+                  h3 !{ed.start} - !{ed.finish}
+                  p !{ed.name}
+                    | 
+                    br
+                    em !{ed.facult}. !{ed.spec}
+            // End 2nd Row
+            // Begin 3rd Row
+            .entry
+              h2 EXPERIENCE
+              each exp in experience
+                .content
+                  h3 !{exp.monthstart} !{exp.yearstart} - !{exp.monthfinish} !{exp.yearfinish}
+                  p
+                    | !{exp.name}
+                    br
+                    em !{exp.position}
+                  ul.info
+                    li !{exp.department}
+                    li !{exp.duties}
+            // End 3rd Row
+            // Begin 4th Row
+            .entry
+              h2 SKILLS
+              .content
+                h3 Software Knowledge
+                ul.skills
+                  li Photoshop
+                  li Illustrator
+                  li InDesign
+                  li Flash
+                  li Fireworks
+                  li Dreamweaver
+                  li After Effects
+                  li Cinema 4D
+                  li Maya
+              .content
+                h3 Languages
+                ul.skills
+                  each val in skills
+                    li= val   
+            // End 4th Row
+            // Begin 5th Row
+            .entry
+              h2 WORKS
+              ul.works
+                li
+                  a(href='http://127.0.0.1:3000/images/1.jpg', rel='gallery', title='Lorem ipsum dolor sit amet.')
+                    img(src='http://127.0.0.1:3000/images/image.jpg', alt='')
+            // Begin 5th Row
+          .clear
+          .paper-bottom
+        // End Paper
+      .wrapper-bottom
+    #message
+      a#top-link(href='#top') Go to Top
+    // End Wrapper
