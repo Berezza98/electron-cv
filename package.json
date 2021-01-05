@@ -18,7 +18,7 @@
     "postinstall": ""
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "html-pdf": "^2.2.0",
     "mustache": "^3.0.1",
     "pug": "^2.0.3",
